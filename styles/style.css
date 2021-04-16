@@ -1,0 +1,25 @@
+html {
+    font-family: 'Lato', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+    outline: none;
+}
+
+#big-red-button {
+    position: absolute;
+    top: 24%;
+    left: 24%;
+    border-radius: 50%;
+    border: 0;
+    background-color: red;
+    box-shadow: 0px 10px 20px red, 2px 4px 6px blue;
+    height: 50vw;
+    width: 50vw;
+    margin: auto;
+    font-size: 10vw;
+    outline: none;
+}
+
+#big-red-button:hover #big-red-button:focus #big-red-button:active {
+    transform: scale(1.2);
+}
