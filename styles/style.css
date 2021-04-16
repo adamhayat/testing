@@ -1,5 +1,4 @@
 html {
-    font-family: 'Lato', sans-serif;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
     outline: none;
@@ -7,7 +6,7 @@ html {
 
 #big-red-button {
     position: absolute;
-    top: 24%;
+    top: 10%;
     left: 24%;
     border-radius: 50%;
     border: 0;
@@ -18,8 +17,32 @@ html {
     margin: auto;
     font-size: 10vw;
     outline: none;
+    color: white;
 }
 
-#big-red-button:hover #big-red-button:focus #big-red-button:active {
+button:hover, button:active, button:focus {
     transform: scale(1.2);
+}
+
+#big-red-button {
+    animation-name: red-button-spin;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes red-button-spin {
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

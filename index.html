@@ -1,16 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato:&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="fonts/fontawesome-free-5.15.2-web/css/all.css">
-    <title>Welcome Mate</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Functions: Task 2</title>
+    <style>
+html {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+    outline: none;
+}
+
+.container {
+width: 100%;
+height: auto;
+}
+
+#big-red-button {
+  display: block;
+  margin: auto;
+    border-radius: 50%;
+    border: 0;
+    background-color: red;
+    height: 9em;
+    width: 9em;
+    font-size: 10vw;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+#text {
+  text-align: center;
+  font-size: 6em;
+  font-weight: bold;
+}
+
+/* button:hover, button:active, button:focus {
+    transform: scale(1.2);
+} */
+
+#big-red-button {
+    animation-name: red-button-spin;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes red-button-spin {
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+    </section>
+
+    <canvas width="480" height="320">
+
+    </canvas>
+
     <div class="container">
-        <button id="big-red-button">Who is high right now?</button>
-    </div>
-        <script src="scripts/main.js"></script>
-    </body>
-    </html>
+      <button id="big-red-button" onclick="whoIsHigh()">Who is high right now?</button>
+  <p id="text">The high person is...</p>
+</div>
+  </body>
+  <script>
+const html = document.querySelector('html');
+const btn = document.querySelector(`button`);
+const para = document.querySelector(`p`);
+const arms = [`Mitch`, `Mitch`, `Mitch`, `Mitch`, `Mitch`, `Adam`, `Steve`, `Ron`];
+
+function whoIsHigh() {
+let randomName = Math.floor(Math.random()*arms.length);
+let result = arms[randomName];
+para.textContent = result;
+}
+
+  </script>
+
+</html>
